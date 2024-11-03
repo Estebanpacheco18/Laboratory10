@@ -10,7 +10,7 @@ data class SerieModel(
     @SerializedName("release_date")
     var release_date:String,
     @SerializedName("rating")
-    var rating:Int,
+    var rating: Int,
     @SerializedName("category")
     var category:String
 )

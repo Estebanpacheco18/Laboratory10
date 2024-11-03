@@ -20,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
@@ -44,11 +45,11 @@ fun SeriesApp() {
     val navController = rememberNavController()
 
     Scaffold(
-        modifier = Modifier.padding(top=40.dp),
-        topBar =    { BarraSuperior() },
+        modifier = Modifier.padding(top = 40.dp),
+        topBar = { BarraSuperior() },
         bottomBar = { BarraInferior(navController) },
         floatingActionButton = { BotonFAB(navController, servicio) },
-        content =   { paddingValues -> Contenido(paddingValues, navController, servicio) }
+        content = { paddingValues -> Contenido(paddingValues, navController, servicio) }
     )
 }
 
@@ -107,6 +108,16 @@ fun BarraInferior(navController: NavHostController) {
     }
 }
 
+//Falto la funcion ScreenInicio
+
+@Composable
+fun ScreenInicio() {
+    // Implement your UI here
+    Box(modifier = Modifier.fillMaxSize()) {
+        Text(text = "Welcome to the Series App", modifier = Modifier.align(Alignment.Center))
+    }
+}
+
 @Composable
 fun Contenido(
     pv: PaddingValues,
@@ -139,9 +150,4 @@ fun Contenido(
             }
         }
     }
-}
-
-@Composable
-fun ScreenInicio() {
-    TODO("Not yet implemented")
 }
